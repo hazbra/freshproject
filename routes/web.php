@@ -51,3 +51,7 @@ Route::put('/articles/{article}', 'ArticlesController@update');
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
