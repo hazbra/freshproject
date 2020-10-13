@@ -31,9 +31,11 @@ Route::get('/test', function (){
 
 Route::get('/posts/{post}', 'PostsController@show');
 
-Route::get('/contact', function (){
-    return view('contact');
-});
+Route::get('/contact', 'ContactController@show');
+Route::post('/contact','ContactController@store');
+
+Route::get('/payments/create', 'PaymentsController@create')->middleware('auth');
+Route::post('/payments','PaymentsController@store')->middleware('auth');
 
 Route::get('/about', function (){
     return view('about', [
