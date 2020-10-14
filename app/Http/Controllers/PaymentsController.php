@@ -13,7 +13,7 @@ class PaymentsController extends Controller
     }
     public function store()
     {
-        request()->user()->notify(new PaymentReceived());
+        request()->user()->notify(new PaymentReceived(900));
 
         return redirect('/payments/create ')
             ->with('message', 'Payment Received!');
