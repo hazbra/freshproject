@@ -51,9 +51,10 @@ Route::get('/articles/{article}', 'ArticlesController@show')->name('articles.sho
 Route::get('/articles/{article}/edit', 'ArticlesController@edit');
 Route::put('/articles/{article}', 'ArticlesController@update');
 
+Route::get('conversations', 'ConversationsController@index');
+Route::get('conversations/{conversation}', 'ConversationsController@show');
 
-
-
+Route::post('best-replies/{reply}', 'ConversationBestReplyController@store');
 
 Auth::routes();
 
