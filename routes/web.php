@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/reports', function () {
+    return 'The secret reports';
+})->middleware('can:view_reports');
+
 Route::get('/welcome', function () {
     return ['foo' => 'bar'];
 });
